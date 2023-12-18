@@ -51,7 +51,7 @@ class Bild
         anzahlGelb = 0;
         anzahlBlau = 0;
         anzahlSchwarz = 0;
-        for(int i = 0, i<anzahlRechtecke, i++) {
+        for(int i = 0; i<anzahlRechtecke; i++) {
             farbe = this.FarbeGeben();
             new RechteckMondrian(farbe);
             if(farbe == "rot") {
@@ -74,6 +74,22 @@ class Bild
         while(anzahlRot == 0 || anzahlGelb == 0 || anzahlBlau == 0 || anzahlSchwarz == 0) {
             farbe = this.FarbeGeben();
             new RechteckMondrian(farbe);
+            if(farbe == "rot") {
+                anzahlRot = anzahlRot + 1; //+=
+            }
+            else{
+                if(farbe == "gelb") {
+                    anzahlGelb = anzahlGelb + 1;
+                }
+                else{
+                    if(farbe == "blau") {
+                        anzahlBlau = anzahlBlau + 1;
+                    }
+                    else{
+                        anzahlSchwarz = anzahlSchwarz + 1;
+                    }
+                }
+            }
         }
     }
 }
