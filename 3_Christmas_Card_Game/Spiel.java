@@ -5,12 +5,13 @@ public class Spiel {
     private int punkteDealer
     private int punkteSpieler;
         public Spiel(){
-        //Konstructorrumpf
-    }
-    
-    public void playgame(int Anzahl) {
         karte1 = new karte("Baum","Baum");
         karte2 = new karte("Baum", "leer");
         karte3 = new karte ("leer", "leer");
+    }
+    
+    public int playgame(int Anzahl) {
+        punkteDealer = Anzahl * 2/3;
+        return punkteDealer;
     }
 }
