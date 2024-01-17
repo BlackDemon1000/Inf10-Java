@@ -1,9 +1,11 @@
 public class Spiel {
-    private KARTE karte1;
-    private KARTE karte2;
-    private KARTE karte3;
+    private karte
     private int punkteSpieler;
-    public Spiel(){
+        public Spiel(){
         //Konstructorrumpf
+    }
+    
+    public void playgame(int Anzahl) {
+        
     }
 }
