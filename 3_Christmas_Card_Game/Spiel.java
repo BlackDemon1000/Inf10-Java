@@ -10,6 +10,7 @@ public class Spiel {
     
     public void playgame(int Anzahl) {
         karte1 = new karte("Baum","Baum");
-        karte2 = new karte("Baum")
+        karte2 = new karte("Baum", "leer");
+        karte3 = new karte ("leer", "leer");
     }
 }
