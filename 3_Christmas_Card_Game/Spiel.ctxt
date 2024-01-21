@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Spiel
+comment1.params=
+comment1.target=Spiel()
+comment2.params=
+comment2.target=void\ createCards()
+comment3.params=
+comment3.target=void\ radomCard()
+comment4.params=count
+comment4.target=void\ countCards(int)
+numComments=5
