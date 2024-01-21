@@ -4,8 +4,7 @@ comment1.params=
 comment1.target=Spiel()
 comment2.params=
 comment2.target=void\ createCards()
-comment3.params=
-comment3.target=void\ radomCard()
-comment4.params=count
-comment4.target=void\ countCards(int)
-numComments=5
+comment3.params=Plays
+comment3.target=java.lang.String\ simulateGame(int)
+comment3.text=public\ void\ radomCard()\ {\n\ \ \ \ \ \ \ \ card\ \=\ zufall.GanzzahlGeben(max\ -\ min);\n\ \ \ \ \ \ \ \ System.out.println(card);\n}
+numComments=4

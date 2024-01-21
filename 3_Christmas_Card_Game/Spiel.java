@@ -21,12 +21,12 @@ public class Spiel {
     }
 
     /*public void radomCard() {
-        card = zufall.GanzzahlGeben(4);
+        card = zufall.GanzzahlGeben(max - min);
         System.out.println(card);
     }*/
 
-    public void countCards(int count) {
-        for(int i=0;i<count;i++) {
+    public String simulateGame(int Plays) {
+        for(int i=0;i<Plays;i++) {
             createCards();
             if(karte1.getVorderseite() == karte1.getRückseite()) {
                 punkteDealer += 1;
@@ -44,6 +44,6 @@ public class Spiel {
                 punkteSpieler += 1;
             }
         }
-        System.out.println("PunkteSpieler: " + punkteSpieler + " PunkteDealer: " + punkteDealer);
+       return("Punkte des Spielers: " + punkteSpieler + " Punkte des Dealers: " + punkteDealer);
     }
 }
