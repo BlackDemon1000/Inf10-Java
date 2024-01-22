@@ -1,3 +1,4 @@
+import java.util.Random;
 public class Spiel {
     private karte karte1;
     private karte karte2;
@@ -20,10 +21,12 @@ public class Spiel {
 
     }
 
-    /*public void radomCard() {
-        card = zufall.GanzzahlGeben(max - min);
+    public void radomCard() {
+        Random generator;
+        generator = new Random();
+        card = generator.nextInt(4) - 1;
         System.out.println(card);
-    }*/
+    }
 
     public String simulateGame(int Plays) {
         for(int i=0;i<Plays;i++) {
