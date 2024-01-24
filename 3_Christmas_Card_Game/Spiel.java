@@ -1,52 +1,66 @@
 import java.util.Random;
-public class Spiel {
-    private karte karte1;
-    private karte karte2;
-    private karte karte3;
-    private int punkteDealer;
-    private int punkteSpieler;
-    private int card;
-    private final int min = 1;
-    private final int max = 3;
-        public Spiel(){
-        karte1 = new karte("Baum","Baum");
-        karte2 = new karte("Baum", "leer");
-        karte3 = new karte ("leer", "leer");
+
+public class spiel {
+    private card card1; // Vorder- und Rückseite mit Baum
+    private card card2; // Vorderseite Baum, Rückseite leer
+    private card card3; // Vorderseite und Rückseite leer
+    private card drawn;
+    private String topPage;
+    private int pointsPlayer;
+    private int pointsDealer;
+
+    public spiel() {
+        card1 = new card("Baum", "Baum");
+        card2 = new card("Baum", "leer");
+        card3 = new card("leer", "leer");
     }
     
-     public void createCards() {
-        karte1 = new karte("Baum", "Baum");
-        karte2 = new karte("Baum", "leer");
-        karte3 = new karte("leer", "leer");
+    public void createCards() {
+        card1 = new card("Baum", "Baum");
+        card2 = new card("Baum", "leer");
+        card3 = new card("leer", "leer");
+    }
+
+    public void draw() {
+        int number = randomNumber(2);
+        switch(number) {
+            case 0: drawn = card1; break;
+            case 1: drawn = card2; break;
+            case 2: drawn = card3; break;
+        }
+
+        number = randomNumber(1);
+
+        switch(number) {
+            case 0: topPage = drawn.getTopPage();
+            case 1: topPage = drawn.getBottomPage();
+        }
+        System.out.println("Shown: " + topPage + " and: " + drawn.getTopPage() + " and " + drawn.getBottomPage() + " was drawn.");
+
+        if(drawn.getTopPage() == drawn.getBottomPage()) {
+            pointsDealer++;
+            System.out.println("Dealer win");
+        } else {
+            pointsPlayer++;
+            System.out.println("Player win");
+        }
 
     }
 
-    public void radomCard() {
+    public void simulateGame(int amount) {
+        for(int c=0;c<amount;c++) {
+            draw();
+        }
+        System.out.println("---------");
+        System.out.println("Dealer's points: " + pointsDealer + ", Player's points: " + pointsPlayer);
+        System.out.println(pointsDealer>pointsPlayer?"Dealer won!":"Player won!");
+    }
+
+    public int randomNumber(int nextInt) { // random number von 0 bis nextInt
         Random generator;
         generator = new Random();
-        card = generator.nextInt(4) - 1;
-        System.out.println(card);
+        int number = generator.nextInt(nextInt + 1);
+        return number;
     }
 
-    public String simulateGame(int Plays) {
-        for(int i=0;i<Plays;i++) {
-            createCards();
-            if(karte1.getVorderseite() == karte1.getRückseite()) {
-                punkteDealer += 1;
-            } else{
-                punkteSpieler += 1;
-            }            
-            if(karte2.getVorderseite() == karte2.getRückseite()) {
-                punkteDealer += 1;
-            } else{
-                punkteSpieler += 1;
-            }            
-            if(karte3.getVorderseite() == karte3.getRückseite()) {
-                punkteDealer += 1;
-            } else{
-                punkteSpieler += 1;
-            }
-        }
-       return("Punkte des Spielers: " + punkteSpieler + " Punkte des Dealers: " + punkteDealer);
-    }
 }
