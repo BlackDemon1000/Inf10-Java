@@ -9,7 +9,7 @@ public class spiel {
     private int pointsPlayer;
     private int pointsDealer;
 
-    public spiel() {
+    public Spiel() {
         card1 = new card("Baum", "Baum");
         card2 = new card("Baum", "leer");
         card3 = new card("leer", "leer");
@@ -21,7 +21,7 @@ public class spiel {
         card3 = new card("leer", "leer");
     }
 
-    public void draw() {
+    public void onePlay() {
         int number = randomNumber(2);
         switch(number) {
             case 0: drawn = card1; break;
@@ -49,11 +49,11 @@ public class spiel {
 
     public void simulateGame(int Plays) {
         for(int c=0;c<Plays;c++) {
-            draw();
+            onePlay();
         }
         System.out.println("---------");
-        System.out.println("Dealer's points: " + pointsDealer + ", Player's points: " + pointsPlayer);
-        System.out.println(pointsDealer>pointsPlayer?"Dealer won!":"Player won!");
+        System.out.println("Dealers points: " + pointsDealer + ", Players points: " + pointsPlayer);
+        System.out.println(pointsDealer>pointsPlayer?"Dealer won":"Player won");
     }
 
     public int randomNumber(int nextInt) { // random number with java.util
