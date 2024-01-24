@@ -47,8 +47,8 @@ public class spiel {
 
     }
 
-    public void simulateGame(int amount) {
-        for(int c=0;c<amount;c++) {
+    public void simulateGame(int Plays) {
+        for(int c=0;c<Plays;c++) {
             draw();
         }
         System.out.println("---------");
@@ -56,7 +56,7 @@ public class spiel {
         System.out.println(pointsDealer>pointsPlayer?"Dealer won!":"Player won!");
     }
 
-    public int randomNumber(int nextInt) { // random number von 0 bis nextInt
+    public int randomNumber(int nextInt) { // random number with java.util
         Random generator;
         generator = new Random();
         int number = generator.nextInt(nextInt + 1);
