@@ -31,6 +31,8 @@ public class Spiel extends Ereignisbehandlung
   @Override
   public void TaktImpulsAusführen(){
       berg1.Bewegen();
+      berg2.Bewegen();
       insekt1.Bewegen();
+      insekt2.Bewegen();
   }
 }
