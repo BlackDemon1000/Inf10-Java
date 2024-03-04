@@ -10,7 +10,7 @@ public class Spiel extends Ereignisbehandlung
   private Berge berg2;
   private Insekt insekt2;
   private Text punktzahl;
- 
+  String Punktzahl;
   
   
   public Spiel(){
@@ -38,5 +38,17 @@ public class Spiel extends Ereignisbehandlung
       berg2.Bewegen();
       insekt1.Bewegen();
       insekt2.Bewegen();
+      if(vogel1.Berührt(insekt1)) {
+        Punktzahl = "10";
+        punktzahl.TextSetzen(Punktzahl);
+        insekt1.PositionSetzen(800, insekt1.YPositionGeben());
+      }
+      if(vogel1.Berührt(berg1) ||vogel1.Berührt(berg2)){
+        Textt = new Text();
+        t.TextSetzen("Spiel beendet");
+        t.TextGrößeSetzen(50);
+        t.PositionSetzen(200, 100)
+        Anhalten();
+      }
   }
 }
