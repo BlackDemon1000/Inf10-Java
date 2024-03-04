@@ -9,6 +9,7 @@ public class Spiel extends Ereignisbehandlung
   private Vogel vogel1;
   private Berge berg2;
   private Insekt insekt2;
+  private Text punktzahl;
  
   
   
@@ -20,13 +21,16 @@ public class Spiel extends Ereignisbehandlung
     vogel1 = new Vogel();
     berg2 = new Berge();
     insekt2 = new Insekt(1);
+    punktzahl = new Text();
     berg1.PositionSetzen(270, 315);
     insekt1.PositionSetzen(435, 192);
     berg2.PositionSetzen(533, 400);
     insekt2.PositionSetzen(637, 221);
+    punktzahl.PositionSetzen(731,31);
     wiese1.NachHintenBringen();
     himmel1.NachHintenBringen();
-      
+    punktzahl.TextSetzen("0");
+    punktzahl.TextGrößeSetzen(30);
   }
   @Override
   public void TaktImpulsAusführen(){
