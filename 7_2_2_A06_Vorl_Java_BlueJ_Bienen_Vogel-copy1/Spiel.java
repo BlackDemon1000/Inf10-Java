@@ -44,10 +44,10 @@ public class Spiel extends Ereignisbehandlung
         insekt1.PositionSetzen(800, insekt1.YPositionGeben());
       }
       if(vogel1.Berührt(berg1) ||vogel1.Berührt(berg2)){
-        Textt = new Text();
+        Text t = new Text();
         t.TextSetzen("Spiel beendet");
         t.TextGrößeSetzen(50);
-        t.PositionSetzen(200, 100)
+        t.PositionSetzen(200, 100);
         Anhalten();
       }
   }
