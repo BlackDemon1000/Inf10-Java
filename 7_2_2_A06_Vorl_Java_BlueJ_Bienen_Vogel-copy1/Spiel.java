@@ -10,7 +10,7 @@ public class Spiel extends Ereignisbehandlung
   private Berge berg2;
   //private Insekt insekt2;
   private Text punktzahl;
-  String Punktzahl;
+  String Punktzahl = "0";
   Insekt[] insekten;
   
   
@@ -35,6 +35,7 @@ public class Spiel extends Ereignisbehandlung
     insekten[0].PositionSetzen(435, 192);
     berg2.PositionSetzen(533, 400);
     insekten[1].PositionSetzen(637, 221);
+    insekten[2].PositionSetzen(400, 221);
     punktzahl.PositionSetzen(731,31);
     wiese1.NachHintenBringen();
     himmel1.NachHintenBringen();
@@ -45,6 +46,7 @@ public class Spiel extends Ereignisbehandlung
   public void TaktImpulsAusführen(){
       berg1.Bewegen();
       berg2.Bewegen();
+      punktzahl.TextSetzen(Punktzahl);
       for(Insekt ins :insekten) {
         ins.Bewegen();
       }
