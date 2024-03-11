@@ -45,9 +45,19 @@ public class Spiel extends Ereignisbehandlung
   public void TaktImpulsAusführen(){
       berg1.Bewegen();
       berg2.Bewegen();
+      for(Insekt ins :insekten) {
+        ins.Bewegen();
+      }
+      for(int i = 0; i<3;i++) {
+        if(vogel1.Berührt(insekten[i])) {
+          Punktzahl = "10";
+          punktzahl.TextSetzen(Punktzahl);
+          insekten[i].PositionSetzen(800, insekten[i].YPositionGeben());
+        }
+       }
       /*
       insekt1.Bewegen();
-      insekt2.Bewegen();S
+      insekt2.Bewegen();
       if(vogel1.Berührt(insekt1)) {
         Punktzahl = "10";
         punktzahl.TextSetzen(Punktzahl);
