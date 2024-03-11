@@ -24,14 +24,17 @@ public class Spiel extends Ereignisbehandlung
     insekt2 = new Insekt(1);
     */
    insekten = new Insekt[3];
-   insekten[0] = new Insekt(1);
+   for(int i = 0; i<3;i++) {
+    insekten[i] = new Insekt(1);
+   }
+   /*insekten[0] = new Insekt(1);
    insekten[1] = new Insekt(1);
-   insekten[2] = new Insekt(1);
+   insekten[2] = new Insekt(1);*/
     punktzahl = new Text();
     berg1.PositionSetzen(270, 315);
-    //insekt1.PositionSetzen(435, 192);
+    insekten[0].PositionSetzen(435, 192);
     berg2.PositionSetzen(533, 400);
-    //insekt2.PositionSetzen(637, 221);
+    insekten[1].PositionSetzen(637, 221);
     punktzahl.PositionSetzen(731,31);
     wiese1.NachHintenBringen();
     himmel1.NachHintenBringen();
