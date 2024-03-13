@@ -1,25 +1,25 @@
-  
-
 public class Spiel extends Ereignisbehandlung
 {
-  private Berge berg1;
   //private Insekt insekt1;
   private Himmel himmel1;
   private Wiese wiese1;
   private Vogel vogel1;
-  private Berge berg2;
   //private Insekt insekt2;
   private Text punktzahl;
   String Punktzahl = "0";
   Insekt[] insekten;
+  Berge[] berge;
   
   
   public Spiel(){
     himmel1 = new Himmel();
     wiese1 = new Wiese();
-    berg1 = new Berge();
     vogel1 = new Vogel();
-    berg2 = new Berge();
+    berge = new Berge[2];
+    for(int i = 0; i<2;i++) {
+      berge[i] = new Berge();
+    }
+
     /*insekt1 = new Insekt(1);
     insekt2 = new Insekt(1);
     */
@@ -31,9 +31,9 @@ public class Spiel extends Ereignisbehandlung
    insekten[1] = new Insekt(1);
    insekten[2] = new Insekt(1);*/
     punktzahl = new Text();
-    berg1.PositionSetzen(270, 315);
+    berge[0].PositionSetzen(270, 315);
     insekten[0].PositionSetzen(435, 192);
-    berg2.PositionSetzen(533, 400);
+    berge[1].PositionSetzen(533, 400);
     insekten[1].PositionSetzen(637, 221);
     insekten[2].PositionSetzen(400, 221);
     punktzahl.PositionSetzen(731,31);
@@ -44,8 +44,8 @@ public class Spiel extends Ereignisbehandlung
   }
   @Override
   public void TaktImpulsAusführen(){
-      berg1.Bewegen();
-      berg2.Bewegen();
+      berge[0].Bewegen();
+      berge[1].Bewegen();
       punktzahl.TextSetzen(Punktzahl);
       for(Insekt ins :insekten) {
         ins.Bewegen();
