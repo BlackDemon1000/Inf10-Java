@@ -6,6 +6,7 @@ public class Spiel extends Ereignisbehandlung
   private Vogel vogel1;
   //private Insekt insekt2;
   private Text punktzahl;
+  private Text verloren;
   String Punktzahl = "0";
   Insekt[] insekten;
   Berge[] berge;
@@ -31,6 +32,7 @@ public class Spiel extends Ereignisbehandlung
    insekten[1] = new Insekt(1);
    insekten[2] = new Insekt(1);*/
     punktzahl = new Text();
+    verloren = new Text();
     berge[0].PositionSetzen(270, 315);
     insekten[0].PositionSetzen(435, 192);
     berge[1].PositionSetzen(533, 400);
@@ -50,13 +52,21 @@ public class Spiel extends Ereignisbehandlung
       for(Insekt ins :insekten) {
         ins.Bewegen();
       }
-      for(int i = 0; i<3;i++) {
+      for(int i = 0; i<3;i++) { 
         if(vogel1.Berührt(insekten[i])) {
           Punktzahl = "10";
           punktzahl.TextSetzen(Punktzahl);
           insekten[i].PositionSetzen(800, insekten[i].YPositionGeben());
         }
-       }
+      }
+      for(int i = 0; i<2;i++) { 
+        if(vogel1.Berührt(berge[i])) {
+          verloren.PositionSetzen(300, 200);
+          verloren.TextGrößeSetzen(70);
+          verloren.TextSetzen("Verloren");
+          Anhalten();
+        }
+      }
       /*
       insekt1.Bewegen();
       insekt2.Bewegen();
