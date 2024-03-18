@@ -84,4 +84,7 @@ public class Spiel extends Ereignisbehandlung
       }
       */
   }
+  public void verdoppeln() {
+    Insekt[] insekten2 = new Insekt[6];
+  }
 }
