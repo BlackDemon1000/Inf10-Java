@@ -86,5 +86,24 @@ public class Spiel extends Ereignisbehandlung
   }
   public void verdoppeln() {
     Insekt[] insekten2 = new Insekt[6];
+    for(int i=0; i < insekten.length; i++) {
+      insekten2[i] = insekten[i];
+    }
+    insekten = insekten2;
+    for(int i=3; i < insekten.length; i++){
+      insekten[i] = new Insekt(1);
+      insekten[i].PositionSetzen(insekten[i-3].XPositionGeben(), insekten[i-3].YPositionGeben());
+    }
+  }
+
+  public void BergeVerdoppeln() {
+    Berge[] berge2 = new Berge[4];
+    for(int i=0; i < berge.length; i++) {
+      berge2[i] = berge[i];
+    }
+    berge = berge2;
+    for(int i=3; i < berge.length; i++){
+      berge[i] = new Berge();
+    }
   }
 }
