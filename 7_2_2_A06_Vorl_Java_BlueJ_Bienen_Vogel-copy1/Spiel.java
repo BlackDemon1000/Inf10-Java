@@ -84,7 +84,7 @@ public class Spiel extends Ereignisbehandlung
       }
       */
   }
-  public void verdoppeln() {
+  public void insektenVerdoppeln() {
     Insekt[] insekten2 = new Insekt[6];
     for(int i=0; i < insekten.length; i++) {
       insekten2[i] = insekten[i];
@@ -96,14 +96,12 @@ public class Spiel extends Ereignisbehandlung
     }
   }
 
-  public void BergeVerdoppeln() {
-    Berge[] berge2 = new Berge[4];
-    for(int i=0; i < berge.length; i++) {
-      berge2[i] = berge[i];
-    }
-    berge = berge2;
-    for(int i=3; i < berge.length; i++){
-      berge[i] = new Berge();
-    }
+  /*public void BergeVerdoppeln() {
+    Berge[]
+  }*/
+
+  public void verdoppeln() {
+    insektenVerdoppeln();
+    //BergeVerdoppeln();
   }
 }
