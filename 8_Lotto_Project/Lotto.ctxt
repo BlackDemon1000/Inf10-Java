@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Lotto
+comment1.params=
+comment1.target=Lotto()
+comment2.params=Zahl1\ Zahl2\ Zahl3\ Zahl4\ Zahl5\ Zahl6
+comment2.target=int[]\ tippen(int,\ int,\ int,\ int,\ int,\ int)
+comment3.params=
+comment3.target=void\ ZahlenZiehen()
+comment4.params=Zahl
+comment4.target=boolean\ IstEnthalten(int)
+numComments=5
