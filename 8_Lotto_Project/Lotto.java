@@ -3,11 +3,13 @@ public class Lotto
 {
     private int[] gezogeneZahlen;
     private int[] tipps;
+    int[] insekten;
     public Lotto()
     {
         tipps = new int[6];
         gezogeneZahlen = new int[6];
-        random = new Random();
+        insekten = new int
+        //random = new Random();
     }
 
     public int[] tippen(int Zahl1, int Zahl2, int Zahl3, int Zahl4, int Zahl5, int Zahl6) {
@@ -21,7 +23,7 @@ public class Lotto
         return tipps;
     }
 
-    public void ZahlenZiehen() {
+    /*public void ZahlenZiehen() {
         gezogeneZahlen.clear();
         int anzahlZahlen = 0;
         while (anzahlZahlen<=6) {
@@ -33,7 +35,7 @@ public class Lotto
             }
 
         }
-    }
+    }*/
 
     public boolean IstEnthalten(int Zahl) {
         for(int i = 0; i < gezogeneZahlen.length; i++) {
