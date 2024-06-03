@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=RumpfSymbol
+comment1.params=
+comment1.target=RumpfSymbol()
+comment1.text=\n\ Standardkonstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ KASSENSYMBOL.\n\ Er\ erzeugt\ ein\ scharzes\ Rechteck\ in\ der\ linken\ oberen\ Ecke\ des\ Fensters.\n\ Das\ Fenster\ wird\ bei\ Bedarf\ angelegt.\n
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+comment3.params=x\ y
+comment3.target=void\ PositionSetzen(int,\ int)
+comment3.text=\n\ Setzt\ die\ Position\ des\ Rumpfelements.Der\ Ursprung\ liegt\ in\ der\ Mitte\ des\n\ Fensters,\ die\ y-Achse\ zeigt\ nach\ unten.(x\ /y)\ bedeutet\ das\n\ K\u00E4stchen\ rechts\ unterhalb\ der\ Gitterlinien.\n\ @param\ x\ x-Position\n\ @param\ y\ y-Position\n
+comment4.params=
+comment4.target=int\ XPositionGeben()
+comment4.text=\n\ Gibt\ den\ X-Wert\ der\ Position\ des\ Kopfelements.\n\ @return\ x-Position\n
+comment5.params=
+comment5.target=int\ YPositionGeben()
+comment5.text=\n\ Gibt\ den\ Y-Wert\ der\ Position\ des\ Kopfelements.\n\ @return\ y-Position\n
+comment6.params=
+comment6.target=void\ Entfernen()
+comment6.text=\n\ Entfernt\ die\ Figur\ aus\ der\ Anzeige\n
+numComments=7
