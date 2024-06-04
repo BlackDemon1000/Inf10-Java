@@ -5,8 +5,10 @@
  * @author Albert Wiedemann 
  * @version 1.0
  */
+import java.util.ArrayList;
 class Schlange
 {
+    ArrayList <RumpfSymbol> rumpf;
     /** Darstellung des Kopfs.*/
     private KopfSymbol kopf;
     /** Darstellung des Rumpfs */
@@ -22,6 +24,10 @@ class Schlange
      */
     Schlange(int x, int y, char richtung)
     {
+        rumpf = new ArrayList <RumpfSymbol> ();
+        for(int i=0; i <= 3; i++) {
+          rumpf.add(new RumpfSymbol());
+        }
         kopf = new KopfSymbol();
         kopf.AusrichtungSetzen(richtung);
         kopf.PositionSetzen(x, y);
