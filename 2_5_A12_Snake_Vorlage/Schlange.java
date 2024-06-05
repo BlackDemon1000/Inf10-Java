@@ -37,24 +37,36 @@ class Schlange
         switch (richtung)
         {
           case 'O':
-            rumpf3.PositionSetzen(x - 1, y);
+            for(int i=0; i<rumpf.size(); i++) {
+              rumpf.get(i).PositionSetzen(x-(rumpf.size()-i), y);
+            }
+            /*rumpf3.PositionSetzen(x - 1, y);
             rumpf2.PositionSetzen(x - 2, y);
-            rumpf1.PositionSetzen(x - 3, y);
+            rumpf1.PositionSetzen(x - 3, y);*/
             break;
           case 'N':
-            rumpf3.PositionSetzen(x, y + 1);
+            for(int i=0; i<rumpf.size(); i++) {
+              rumpf.get(i).PositionSetzen(x ,y+(rumpf.size()-i));
+            }
+            /*rumpf3.PositionSetzen(x, y + 1);
             rumpf2.PositionSetzen(x, y + 2);
-            rumpf1.PositionSetzen(x, y + 3);
+            rumpf1.PositionSetzen(x, y + 3);*/
             break;
           case 'W':
-            rumpf3.PositionSetzen(x + 1, y);
+            for(int i=0; i<rumpf.size(); i++) {
+              rumpf.get(i).PositionSetzen(x+(rumpf.size()-i), y);
+            }
+            /*rumpf3.PositionSetzen(x + 1, y);
             rumpf2.PositionSetzen(x + 2, y);
-            rumpf1.PositionSetzen(x + 3, y);
+            rumpf1.PositionSetzen(x + 3, y);*/
             break;
           case 'S':
-            rumpf3.PositionSetzen(x, y - 1);
+            for(int i=0; i<rumpf.size(); i++) {
+              rumpf.get(i).PositionSetzen(x ,y-(rumpf.size()-i));
+            }
+            /*rumpf3.PositionSetzen(x, y - 1);
             rumpf2.PositionSetzen(x, y - 2);
-            rumpf1.PositionSetzen(x, y - 3);
+            rumpf1.PositionSetzen(x, y - 3);*/
             break;
         }
     }
