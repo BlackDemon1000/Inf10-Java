@@ -18,4 +18,15 @@ public class Sonderfeld
     public void Aktion() {
         //amgus, Methode wird von Unterklassen überschrieben
     }
+
+    public void ZufälligPositionieren(){
+        int x;
+        int y;
+        do {
+        x = Spiel.XKoordinateZufälligGeben();
+        y = spiel.XKoordinateZufälligGeben();
+        }
+        while(!spiel.IstFrei(x,y));
+        symbol.PositionSetzen(x,y);
+    }
 }
