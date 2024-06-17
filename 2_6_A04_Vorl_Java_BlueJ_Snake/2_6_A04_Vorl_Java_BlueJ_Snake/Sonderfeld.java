@@ -23,7 +23,7 @@ public class Sonderfeld
         int x;
         int y;
         do {
-        x = Spiel.XKoordinateZufälligGeben();
+        x = spiel.XKoordinateZufälligGeben();
         y = spiel.XKoordinateZufälligGeben();
         }
         while(!spiel.IstFrei(x,y));

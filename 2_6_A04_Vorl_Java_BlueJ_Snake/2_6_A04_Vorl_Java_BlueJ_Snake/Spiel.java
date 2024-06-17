@@ -9,6 +9,7 @@ import java.util.*;
  */
 class Spiel extends EreignisBehandlung
 {
+    //private ArrayList <SONDERFELD> sonderfelder;
     /** Die Schlange.*/
     private Schlange schlange;
     /** Das Spielfeld.*/
