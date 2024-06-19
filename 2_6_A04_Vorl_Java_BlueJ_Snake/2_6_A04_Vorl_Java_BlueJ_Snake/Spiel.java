@@ -34,7 +34,6 @@ class Spiel extends EreignisBehandlung
     Spiel()
     {
         sonderfelder = new ArrayList<Sonderfeld>();
-        //sonderfelder.add(new Apfel());
         char richtung;
         int xStart, yStart;
         zzGenerator = new Random();
@@ -57,6 +56,13 @@ class Spiel extends EreignisBehandlung
         yStart = -4 + zzGenerator.nextInt(8);
         schlange = new Schlange(xStart, yStart, richtung);
         spielfeldrand = new RandSymbol();
+        sonderfelder.add(new Apfel(this));
+        for(int i = 0; i<5; i++){
+            sonderfelder.add(new Minus(this));
+        }
+        for(int i = 0; i<5; i++){
+            sonderfelder.add(new Pilz(this));
+        }
         punkte = 0;
         aktSchritte = maxSchritte;
         sonderZähler = 0;
@@ -131,6 +137,9 @@ class Spiel extends EreignisBehandlung
     }
     
     // Methode zum Entfernen eines Sonderfelds
+    void Entfernen(Sonderfeld was) {
+        sonderfelder.remove(was);
+    }
     
 
     /**

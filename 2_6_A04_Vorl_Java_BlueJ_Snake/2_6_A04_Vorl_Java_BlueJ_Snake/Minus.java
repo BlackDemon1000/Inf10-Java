@@ -13,6 +13,7 @@ public class Minus extends Sonderfeld
     public void Aktion() {
         spiel.PunkteÄndern(200);
         ZufälligPositionieren();
+        //sich selber entferenen
     }
 
 }
