@@ -9,7 +9,7 @@ import java.util.*;
  */
 class Spiel extends EreignisBehandlung
 {
-    //private ArrayList <SONDERFELD> sonderfelder;
+    private ArrayList <Sonderfeld> sonderfelder;
     /** Die Schlange.*/
     private Schlange schlange;
     /** Das Spielfeld.*/
@@ -33,6 +33,8 @@ class Spiel extends EreignisBehandlung
      */
     Spiel()
     {
+        sonderfelder = new ArrayList<Sonderfeld>();
+        //sonderfelder.add(new Apfel());
         char richtung;
         int xStart, yStart;
         zzGenerator = new Random();
@@ -134,7 +136,7 @@ class Spiel extends EreignisBehandlung
     /**
      * Bewegt die Schlange.
      */
-    @Override void TaktImpulsAusführen()
+   @Override void TaktImpulsAusführen()
     {
         if ((schlange.XPositionGeben() <= spielfeldrand.XMaxGeben()) && (schlange.XPositionGeben() >= spielfeldrand.XMinGeben()) &&
             (schlange.YPositionGeben() <= spielfeldrand.YMaxGeben()) && (schlange.YPositionGeben() >= spielfeldrand.YMinGeben()) &&
@@ -146,11 +148,38 @@ class Spiel extends EreignisBehandlung
                 schlange.Bewegen(true);
                 aktSchritte = maxSchritte;
             }
+            else if (sonderZähler > 0)
+            {
+                schlange.Bewegen(true);
+                sonderZähler -= 1;
+            }
             else
             {
                 schlange.Bewegen(false);
             }
             punkte += 1;
+            if (bremsZähler > 0)
+            {
+                if (bremsZähler == 1)
+                {
+                    TaktdauerSetzen(500);
+                    spielfeldrand.SonderanzeigeSetzen("");
+                }
+                else if (bremsZähler == 10)
+                {
+                    spielfeldrand.SonderanzeigeSetzen("!");
+                }
+                bremsZähler -= 1;
+            }
+            for (SonderFeld s: (ArrayList<SonderFeld>)sonderfelder.clone())
+            {
+                if ((s != null) &&
+                    (schlange.XPositionGeben() == s.XPositionGeben()) &&
+                    (schlange.YPositionGeben() == s.YPositionGeben()))
+                {
+                    s.Aktion();
+                }
+            }
             spielfeldrand.PunkteSetzen(punkte);
         }
         else
