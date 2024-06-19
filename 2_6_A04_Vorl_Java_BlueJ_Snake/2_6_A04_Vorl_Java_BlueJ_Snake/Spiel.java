@@ -171,7 +171,7 @@ class Spiel extends EreignisBehandlung
                 }
                 bremsZähler -= 1;
             }
-            for (SonderFeld s: (ArrayList<SonderFeld>)sonderfelder.clone())
+            for (Sonderfeld s: (ArrayList<Sonderfeld>)sonderfelder)
             {
                 if ((s != null) &&
                     (schlange.XPositionGeben() == s.XPositionGeben()) &&
