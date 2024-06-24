@@ -1,5 +1,5 @@
 
-public class Sonderfeld
+public abstract class Sonderfeld
 {
     protected Spiel spiel;
     protected SonderSymbol symbol;
